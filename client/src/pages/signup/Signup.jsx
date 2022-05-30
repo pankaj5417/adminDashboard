@@ -1,6 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react";
+import { URL } from "../../url";
 import "./signup.css";
 export const SignUp = () => {
   const [signup, setSignup] = useState({ username: "", password: "" });
@@ -13,7 +14,7 @@ export const SignUp = () => {
   useEffect(() => {});
 
   const signupUser = () => {
-    fetch("http://localhost:8000/api/userData/register", {
+    fetch(`${URL}/userData/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

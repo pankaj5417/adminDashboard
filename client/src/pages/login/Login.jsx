@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import { URL } from "../../url";
 
 import "./login.css";
 export const Login = () => {
@@ -15,7 +16,7 @@ export const Login = () => {
   console.log(login);
   useEffect(() => {}, []);
   const signinUser = () => {
-    fetch("http://localhost:8000/api/userData/login", {
+    fetch(`${URL}/userData/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +39,7 @@ export const Login = () => {
     })
   };
   const forgotPassword = () => {
-    fetch("http://localhost:8000/api/userData/forgotPassword", {
+    fetch(`${URL}/userData/forgotPassword`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

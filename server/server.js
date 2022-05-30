@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 var cors = require("cors");
 const helmet = require("helmet");
-
 const authRoute = require("./controllers/auth.controller");
+const port = process.env.PORT || 8000;
 
 dotenv.config();
 
@@ -22,6 +22,6 @@ app.use(helmet());
 
 app.use("/api/userData", authRoute);
 
-app.listen(8000, () => {
-  console.log("server is running");
+app.listen(port, () => {
+  console.log(`server is running on ${port}`);
 });
