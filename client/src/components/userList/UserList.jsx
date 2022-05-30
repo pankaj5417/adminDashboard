@@ -1,4 +1,3 @@
-
 import { userRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -10,9 +9,7 @@ import {
   TableRow,
   TableHeading,
   TableData,
-  
 } from "./userListStyle";
-import { Sidebar } from "../sidebar/Sidebar";
 
 export const UserList = () => {
   const [data, setData] = useState(userRows);
@@ -21,10 +18,9 @@ export const UserList = () => {
 
   return (
     <>
-       
       <div className="userList">
         <Container>
-           <h2 className="title">Users List</h2> 
+          <h2 className="title">Users List</h2>
           <Table>
             <TableRow>
               <TableHeading>Id</TableHeading>
@@ -42,7 +38,6 @@ export const UserList = () => {
                   <TableData>{item.id}</TableData>
                   <TableData>
                     <div className="userInfo">
-                     
                       <span>{item.username}</span>
                     </div>
                   </TableData>
@@ -50,9 +45,11 @@ export const UserList = () => {
                   <TableData>{item.phone}</TableData>
                   <TableData>{item.status}</TableData>
                   <TableData>{item.amount}</TableData>
-                  {userData.user.role==="admin"?
-                  <TableData>{item.type}</TableData>
-                  :""}
+                  {userData.user.role === "admin" ? (
+                    <TableData>{item.type}</TableData>
+                  ) : (
+                    ""
+                  )}
                 </TableRow>
               );
             })}

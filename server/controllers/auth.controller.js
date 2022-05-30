@@ -2,7 +2,6 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 const User = require("../models/User.model");
-const otpGenerator = require("otp-generator");
 const nodemailer = require("nodemailer");
 const _ = require("lodash");
 const jwt = require("jsonwebtoken");

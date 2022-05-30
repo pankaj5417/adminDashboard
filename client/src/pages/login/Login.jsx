@@ -1,11 +1,13 @@
 import { Button, TextField } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react";
+import {  useNavigate } from "react-router-dom";
+
 import "./login.css";
 export const Login = () => {
   const [login, setLogin] = useState({ email: "", password: "" });
   const [userDetails, setUserDetails] = useState();
-
+  const navigate=useNavigate()
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLogin({ ...login, [name]: value });
@@ -28,6 +30,8 @@ export const Login = () => {
         console.log(user);
         setUserDetails(user);
         localStorage.setItem("userData", JSON.stringify(user));
+        localStorage.setItem("loginStatus",JSON.stringify({isLogin:true}))
+        navigate("/home")
       })
       .catch(err=>{
         console.log(err)
@@ -47,6 +51,7 @@ export const Login = () => {
       })
       .then((user) => {
           console.log(user)
+
       })
       .catch(err=>{
           console.log(err)
