@@ -92,7 +92,7 @@ export const Login = () => {
         >
           Login
         </Button>
-        <br />
+           <p style={{textAlign:"center"}}>or</p>
         <Button
           className="forgotButton"
           variant="outlined"
