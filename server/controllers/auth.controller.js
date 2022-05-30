@@ -17,15 +17,15 @@ router.post("/register", async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    const hashedConfirmPassword = await bcrypt.hash(
-      req.body.confirmPassword,
-      salt
-    );
-    if (hashedPassword !== hashedConfirmPassword) {
-      return res
-        .status(401)
-        .json("Password and confirm password should be same");
-    }
+    // const hashedConfirmPassword = await bcrypt.hash(
+    //   req.body.confirmPassword,
+    //   salt
+    // );
+    // if (hashedPassword !== hashedConfirmPassword) {
+    //   return res
+    //     .status(401)
+    //     .json("Password and confirm password should be same");
+    // }
 
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists)
@@ -39,8 +39,9 @@ router.post("/register", async (req, res) => {
       mobile: req.body.mobile,
       email: req.body.email,
       password: hashedPassword,
+      role:req.body.role
 
-      referralCode: req.body.referralCode,
+     
     });
 
     const token = jwt.sign({newuser}, process.env.JWT_SECRET_KEY);

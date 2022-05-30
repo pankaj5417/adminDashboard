@@ -25,14 +25,11 @@ const userSchema=new mongoose.Schema({
         required:true,
         min:6
     },
-   confirmPassword:{
-       type:String,
-       min:6
-   },
-   referralCode:{
-       type:String,
-       required:false,
-   },
+    role:{
+
+    },
+   
+  
    resetToken:{
        data:String,
        default:""
@@ -48,4 +45,4 @@ const userSchema=new mongoose.Schema({
 }
 )
 
-module.exports=mongoose.model("authusers",userSchema)
+module.exports=mongoose.model("userData",userSchema)

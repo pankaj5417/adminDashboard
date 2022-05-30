@@ -1,0 +1,18 @@
+.home{
+    display: flex;
+}
+.home-sidebar{
+   width: 30%;
+}
+.home-rightbar{
+   
+  width: 60%;
+  margin: 10px;
+  margin-top: 100px;
+}
+.transaction{
+    margin-top: 20px;
+}
+h4{
+    text-align: center;
+}

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-//import "./LargeWidgetStyles";
 
 export const Container = styled.div`
-  flex: 2;
+  width: 100%;
   -webkit-box-shadow: 1px 0px 11px -1px #000000;
   box-shadow: 1px 0px 5px -1px #000000;
   padding: 20px;
+ 
 `;
 
 export const Table = styled.table`
