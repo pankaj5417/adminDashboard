@@ -82,7 +82,7 @@
   export const transactionData = [
     {
       id:1,
-      header: "",
+      header: "sdf",
       username: "Pankaj",
       type: "abc",
       amount: "₹122.00",
@@ -90,7 +90,7 @@
     },
     {
       id:2,
-      header: "",
+      header: "fdfd",
       username: "Suraj",
       type: "xyz",
       amount: "231.00",
@@ -98,7 +98,7 @@
     },
     {
       id:3,
-      header: "",
+      header: "dfff",
       username: "Rahul",
       type: "abcd",
       amount: "₹175.00",
@@ -106,7 +106,7 @@
     },
     {
       id:4,
-      header: "",
+      header: "abcd",
       username: "Luigi",
       type: "aaabb",
       amount: "₹150.00",
@@ -114,7 +114,7 @@
     },
     {
       id:5,
-      header: "",
+      header: "xyz",
       username: "Yoshi",
       type: "cccdd",
       amount: "₹340.00",

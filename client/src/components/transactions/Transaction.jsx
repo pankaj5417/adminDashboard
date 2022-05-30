@@ -21,9 +21,9 @@ export const Transaction = ({ data }) => {
       <Table>
         <TableRow>
           <TableHeading>Id</TableHeading>
-          <TableHeading>Header</TableHeading>
-
           <TableHeading>Customer</TableHeading>
+
+          <TableHeading>Header</TableHeading>
           <TableHeading>Type</TableHeading>
           <TableHeading>Amount</TableHeading>
           <TableHeading>Status</TableHeading>
@@ -36,12 +36,12 @@ export const Transaction = ({ data }) => {
                   <>
                     <TableRow key={index}>
                       <TableData>{item.id}</TableData>
+                      <TableData>{item.header}</TableData>
                       <TableData>
                         <div className="userInfo">
                           <span>{item.username}</span>
                         </div>
                       </TableData>
-                      <TableData>{item.header}</TableData>
 
                       <TableData>{item.amount}</TableData>
                       <TableData>
