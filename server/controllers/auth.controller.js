@@ -16,15 +16,7 @@ router.post("/register", async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    // const hashedConfirmPassword = await bcrypt.hash(
-    //   req.body.confirmPassword,
-    //   salt
-    // );
-    // if (hashedPassword !== hashedConfirmPassword) {
-    //   return res
-    //     .status(401)
-    //     .json("Password and confirm password should be same");
-    // }
+    
 
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists)
@@ -90,14 +82,14 @@ router.put("/forgotPassword", function (req, res) {
     var transporter = nodemailer.createTransport({
       // service: 'gmail',//smtp.gmail.com  //in place of service use host...
 
-      // host: "smtp.mailtrap.io",
-      service:"gmail",
-      // port: 2525,
+       host: "smtp.mailtrap.io",
+      //service:"gmail",
+       port: 2525,
       auth: {
-        user:"mr.pankajkumar1994@gmail.com",
-        pass:""
-        // user: "86f18df1253093",
-        // pass: "eaae0c938819f0",
+        // user:"mr.pankajkumar1994@gmail.com",
+        // pass:"sivababa"
+        user: "86f18df1253093",
+        pass: "eaae0c938819f0",
       },
     });
 
@@ -108,6 +100,7 @@ router.put("/forgotPassword", function (req, res) {
 
       html: `
       <h2>Please click on given link to reset your password</h2>
+      
       <p>${process.env.CLIENT_URL}/resetPassword/${token}</p>
       <a href=${process.env.CLIENT_URL}/resetPassword/${token}>resetlink</a>
       `,
